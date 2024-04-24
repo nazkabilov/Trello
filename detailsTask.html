@@ -1,0 +1,23 @@
+<html lang="en" layout:decorate="~{layout/main.html}" xmlns:layout="http://www.w3.org/1999/xhtml">
+<body>
+<div layout:fragment="custom-content">
+    <div class="row mt-3">
+        <div>
+            <label class="form-label">Task name:</label>
+            <input th:value="${taskByFolder.getId()}" type="text" class="form-control" name="taskName">
+        </div>
+        <div>
+            <label class="form-label">Description:</label>
+            <textarea th:value="${taskByFolder.getDescription()}" class="form-control" name="taskDesc"></textarea>
+        </div>
+        <div>
+            <label class="form-label">Status:</label>
+            <input th:if="${task.getStatus()==0}" value="TO DO" type="text" class="form-control" name="status">
+        </div>
+        <br>
+        <button class="btn">Update</button>
+        <button class="btn">Delete</button>
+    </div>
+</div>
+</body>
+</html>
